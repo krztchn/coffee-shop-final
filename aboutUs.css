@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    background-image: url("img/bg.jpg");
+  }
+
+#burgernav{
+    position: fixed;
+    padding: 1rem;
+    top: 0%;
+    right: 0%;
+    align-items: center;
+    z-index: 999;
+  }
+  
+.hamburger-menu{ 
+    background-color: rgba(240, 248, 255, 0.493);
+    height: 40px;
+    width: 40px;
+    top: 15px;
+    right: 10px;
+    position:fixed ;
+    cursor:pointer ;
+    padding:1rem ;
+    z-index: 1000;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.938);
+    border-radius: 10px;
+  }
+  
+.ham-bar{
+    width: 70%;
+    height: 4px;
+    background-color: rgb(92, 60, 24);
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform .6s, opacity .8s, top .6s;
+  }
+  
+.bar-top{
+    top: 25%;
+  }
+  
+.bar-bottom{
+    top: 75%;
+  }
+  
+.hamburger-menu.active{
+    box-shadow: 0px 0px 0px;
+    background-color: transparent;
+   
+  }
+  
+.hamburger-menu.active .bar-top{
+    transform: translate(-50%, -50%) rotate(-315deg);
+    top: 50%;
+    background-color: rgb(224, 41, 41);
+  }
+  
+.hamburger-menu.active .bar-mid{
+    transition: 0ms;
+    opacity: 0;
+  }
+  
+.hamburger-menu.active .bar-bottom{
+    transform: translate(-50%, -50%) rotate(-225deg);
+    top: 50%;
+    background-color: rgb(224, 41, 41);
+  }
+  
+.off-screen-menu{
+    position: fixed;
+    top: 0;
+    right: -20%;
+    background-color:rgba(143, 126, 79, 0.8);
+    height: 100vh;
+    width: 20%;
+    transition: right .5s; 
+    z-index: 900;
+  }
+  
+.off-screen-menu.active{
+    right: -1;
+  }
+  
+a{
+  position: relative;
+  text-decoration: none;
+  }
+  
+.overlayz{
+    margin-top: 15px;
+    margin-bottom: 33px;
+    text-align: center;
+  }
+  
+#itemz{
+    font-size: 25px; /* Adjust font size as needed */ 
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+#itemz:hover{
+    font-family: monospace;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  
+#copefee_label{
+    background-color: #302d29;
+    color: rgb(224, 142, 18);
+    padding: 10px;
+    text-align: left;
+    font-size: 35px;
+    }
+  
+#coffee_img{
+    position: relative;
+    width: 50px;
+    height:50px;
+    margin-bottom: -10px;
+    border-radius: 20px;
+  }
+
+.flip-cards-container {
+  display: flex; 
+  gap: 20px; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap;
+  margin: 20px; 
+}
+
+/* Individual flip cards */
+.image-container {
+  width: 150px;
+  height: 200px;
+  position: relative;
+  perspective: 1000px; /* Enables 3D rotation */
+  cursor: pointer;
+}
+
+/* Flip effect */
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: rotateX(180deg); /* Default: rotated upside down */
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease; /* Smooth rotation */
+}
+
+.image-container.active .flip-card {
+  transform: rotateX(0deg); /* Rotate to 0 degrees */
+}
+
+.card-front {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #4f3b2a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 10px;
+  transform: rotateX(180deg);
+}
+
+body {
+  background-size: cover; 
+  background-position: center; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+}
+
+/* Slow down the transition when hover is removed */
+.image-container:not(:hover) .flip-card {
+  transform: rotateX(180deg);
+  transition: transform 1.5s ease; 
+}
+
+p {
+  text-align: center;
+  font-weight: 900;
+}
+

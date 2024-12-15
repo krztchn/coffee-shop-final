@@ -1,0 +1,346 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ordering page</title>
+    <link rel="stylesheet" href="orderNow.css">
+</head>
+
+<body>
+    <header>
+        <div style="position: fixed; width:100vw; z-index: 500;" >                       
+            <a href="#drinkz">DRINKS</a>
+            <a href="#foodz">FOODS</a>
+            <button  class="view-orders" id="view-orders">ORDERS</button>
+            <button class="open-cart" id="open-cart">
+                <img id="cart_img" src="img/cart.png" alt="">
+            </button>
+        </div>
+    </header>
+
+     <!-- Toast Container -->
+     <div id="toast" class="toast">Added to cart!</div>
+
+      <!-- Cart Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <h2>Cart</h2>
+            <div class="cart-items" id="cart-items"></div>
+            <div class="modal-footer">
+                <button class="close-btn" id="close-modal">Close</button>
+                <button class="confirm-btn" id="confirm-order">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+  <!-- Order Status Modal -->
+  <div class="modal-overlay" id="order-modal-overlay">
+    <div class="modal">
+        <div class="order-status">
+            <h2>Order Status</h2>
+
+            <!-- Order's ID Header-->
+            <div class="order-status-header">
+                <span>Order's ID</span>
+                <span>Status</span>
+                <span>Total Amount</span>
+            </div>
+       </div>
+
+        <div class="order-items">
+            <div id="orderItems"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="close-btn" id="close-order-modal">Close</button>
+        </div>
+    </div>
+  </div>
+
+    <nav id="burgernav">
+        <div class="hamburger-menu">
+            <div class="ham-bar bar-top"></div>
+            <div class="ham-bar bar-mid"></div>
+            <div class="ham-bar bar-bottom"></div>
+        </div>
+
+        <div class="off-screen-menu">    
+            <h1 id="copefee_label">
+                <img id="coffee_img" src="img/coffee_icon1.jpg" alt="Sample Icon">  KBCshop
+            </h1>
+        
+            <div class="overlayz"><a id="itemz" href="home.html">HOME</a></div>
+            <div class="overlayz"><a id="itemz"  href="orderNow.html">ORDER NOW</a></div>       
+            <div class="overlayz"><a id="itemz" href="aboutUs.html">ABOUT US</a></div>      
+            <div class="overlayz contactUs"><a id="itemz" href="contactUs.html">CONTACT US</a></div>
+        </div>
+    </nav>
+
+    <section id="drinkz"></section>
+    <div style="background-color:transparent; padding-block: 28px; ">.</div>
+   
+    <h1 style="text-align: center ;  font-family: sans-serif; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.911) ;
+     color:rgb(235, 162, 114)">
+        Drinks Menu
+    </h1>
+    
+    <div  class="drinks_container">
+       
+        <!-- Product Section -->
+  <div class="cafe1" data-name="MATCHA" data-price="4.99">
+    <div style="position: absolute; right:1; ">
+      <button class="add-to-cart-btn" onclick="addProduct()">
+        <img style="height: 30px;" src="img/add_button.png" alt="Add to Cart">
+      </button>
+    </div>
+
+    <div>
+      <img style="height: 220px;" src="img/drink1.png" alt="Product Image">
+    </div>
+    <label>MATCHA</label>
+  </div>
+
+  <div class="cafe2" data-name="AMERICANO" data-price="5.99">
+    <div style="position: absolute; right:1; ">
+      <button class="add-to-cart-btn" onclick="addProduct()">
+        <img style="height: 30px;" src="img/add_button.png" alt="Add to Cart">
+      </button>
+    </div>
+
+    <div>
+      <img style="height: 220px;" src="img/drink2.png" alt="Product Image">
+    </div>
+    <label>AMERICANO</label>
+  </div>
+
+  <div class="cafe3" data-name="BREVE LATTE" data-price="6.99">
+    <div style="position: absolute; right:1; ">
+      <button class="add-to-cart-btn" onclick="addProduct()">
+        <img style="height: 30px;" src="img/add_button.png" alt="Add to Cart">
+      </button>
+    </div>
+    <div>
+      <img style="height: 220px;" src="img/drink3.png" alt="Product Image">
+    </div>
+    <label>BREVE LATTE</label>
+  </div>
+
+    <div class="cafe4" data-name="CARAMEL MACCHIATO" data-price="6.99">
+        <div style="position: absolute; right:1">
+            <button class="add-to-cart-btn" onclick="addProduct()">
+                <img style="height: 30px;" src="img/add_button.png" alt="Add to Cart">
+            </button>                 
+        </div>
+
+        <div>
+            <img style="height: 220px;" src="img/drink4.png" alt="Product Image">
+        </div>
+        <label>CARAMEL MACCHIATO</label>           
+    </div>
+
+        <div class="cafe5" data-name="ESPRESSO" data-price="6.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/drink5.png" alt="Product Image">
+            </div>
+            <label>ESPRESSO</label>            
+        </div>
+
+        <div class="cafe6" data-name="CAPPUCCINO" data-price="6.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/drink6.png" alt="Product Image">
+            </div>
+            <label>CAPPUCCINO</label>          
+        </div>
+
+        <div class="cafe7" data-name="CHOCO MOCHA" data-price="6.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/drink7.png" alt="Product Image">
+            </div>
+            <label>CHOCO MOCHA</label>
+        </div>
+
+        <div class="cafe8" data-name="LAYERED CORTADO" data-price="6.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/drink8.png" alt="Product Image">
+            </div>
+            <label>LAYERED CORTADO</label>
+        </div>
+
+        <div class="cafe9" data-name="AFFOGATO" data-price="6.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/drink9.png" alt="Product Image">
+            </div>
+            <label>AFFOGATO</label>
+        </div>
+
+        <div class="cafe10" data-name="VIENNA" data-price="6.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/drink10.png" alt="Product Image">
+            </div>
+            <label>VIENNA</label>
+        </div>
+    </div>
+
+    <section id="foodz"></section> 
+    <h1 style="text-align: center ;  font-family: sans-serif; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.911) ;
+     color:rgb(235, 162, 114)">
+        Food Menu
+    </h1>
+
+    <div class="foodz_container">
+
+        <div class="food1" data-name="MUFFIN" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food1.png" alt="Product Image">
+            </div>
+            <label>MUFFIN</label>
+        </div>
+
+        <div class="food2" data-name="CHIPS & GUACAMOLE" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food2.png" alt="Product Image">
+            </div>
+            <label>CHIPS & GUACAMOLE</label>
+        </div>
+
+        <div class="food3" data-name="YOGURT PARFAIT" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food3.png" alt="Product Image">
+            </div>
+            <label>YOGURT PARFAIT</label>
+        </div>
+
+        <div class="food4" data-name="HUMMUS" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food4.png" alt="Product Image">
+            </div>
+            <label>HUMMUS</label>
+        </div>
+
+        <div class="food5" data-name="BURRITO" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food5.png" alt="Product Image">
+            </div>
+            <label>BURRITO</label>
+        </div>
+
+        <div class="food6" data-name="AVOCADO TOAST" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food6.png" alt="Product Image">
+            </div>
+            <label>AVOCADO TOAST</label>
+        </div>
+
+        <div class="food7" data-name="SCONES" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food7.png" alt="Product Image">
+            </div>
+            <label>SCONES</label>
+        </div>
+
+        <div class="food8" data-name="CROISSANT" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food8.png" alt="Product Image">
+            </div>
+            <label>CROISSANT</label>
+        </div>
+
+        <div class="food9" data-name="QUICHE" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food9.png" alt="Product Image">
+            </div>
+            <label>QUICHE</label>
+        </div>
+
+        <div class="food10" data-name="BUTTERMILK PANCAKE" data-price="7.99">
+            <div style="position: absolute; right:1">
+                <button class="add-to-cart-btn" onclick="addProduct()">
+                    <img style="height: 30px;" src="img/add_button.png" alt="">
+                </button>                 
+            </div>
+            <div>
+                <img style="height: 220px;" src="img/food10.png" alt="Product Image">
+            </div>
+            <label>BUTTERMILK PANCAKE</label>
+
+        </div>
+    </div>
+    
+   <script  src="home.js"></script>
+</body>
+</html>
